@@ -1,13 +1,17 @@
-import ContentCard from "./components/ContentCard";
-import Navbar from "./components/Navbar";
-
+import Navbar from "./layouts/Navbar";
+import { Routes, Route } from "react-router-dom";
+import ArticleDetail from "./pages/ArticleDetail";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
-      <ContentCard title="Test title 1" line="some crazy tagline kjdsfakdfjha  dsff dsf" />
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/article/:id" element={<ArticleDetail />} />
+      </Routes>
+    </div>
   );
 }
 
