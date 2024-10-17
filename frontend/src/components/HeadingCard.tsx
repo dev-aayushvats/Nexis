@@ -1,5 +1,5 @@
-import React from "react";
-import TopicChips from "./TopicChips";
+import React from 'react';
+import TopicChips from './TopicChips';
 
 interface IHeadingCard {
   topic: string;

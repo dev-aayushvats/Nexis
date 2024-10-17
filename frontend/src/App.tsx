@@ -1,7 +1,7 @@
-import Navbar from "./layouts/Navbar";
-import { Routes, Route } from "react-router-dom";
-import ArticleDetail from "./pages/ArticleDetail";
-import HomePage from "./pages/HomePage";
+import Navbar from './layouts/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import ArticleDetail from './pages/ArticleDetail';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (

@@ -1,14 +1,14 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import HeadingCard from "../components/HeadingCard"; // Adjust the import path as needed
-import InThisArticle from "../components/InThisArticle";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import HeadingCard from '../components/HeadingCard'; // Adjust the import path as needed
+import InThisArticle from '../components/InThisArticle';
 
 const ArticleDetail: React.FC = () => {
   const { id } = useParams(); // Id from article endpoint to be used to fetch article from backend
 
   const sectionsList = [
-    { id: "introduction", title: "Introduction" },
-    { id: "relaxation", title: "How to relax" },
+    { id: 'introduction', title: 'Introduction' },
+    { id: 'relaxation', title: 'How to relax' },
   ];
 
   return (

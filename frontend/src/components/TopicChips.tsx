@@ -1,5 +1,5 @@
-import React from "react";
-import { getTopicColors } from "../utils/chipsUtils";
+import React from 'react';
+import { getTopicColors } from '../utils/chipsUtils';
 
 interface ITopicChips {
   topic: string;

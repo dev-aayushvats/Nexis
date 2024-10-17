@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 interface InThisArticleProps {
   sections: { id: string; title: string }[]; // Array of sections
@@ -29,15 +29,15 @@ const InThisArticle: React.FC<InThisArticleProps> = ({ sections }) => {
   const scrollToSection = (id: string) => {
     const sectionElement = document.getElementById(id);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [sections]);
 
@@ -49,15 +49,15 @@ const InThisArticle: React.FC<InThisArticleProps> = ({ sections }) => {
           <li key={section.id} className="flex items-center">
             <span
               className={`w-2 h-8 rounded-md mr-2 ${
-                activeSection === section.id ? "bg-indigo-600" : "bg-indigo-100"
+                activeSection === section.id ? 'bg-indigo-600' : 'bg-indigo-100'
               }`}
             ></span>
             <button
               onClick={() => scrollToSection(section.id)} // Scroll to section on click
               className={`block w-full text-left p-2 rounded ${
                 activeSection === section.id
-                  ? " text-indigo-800 font-bold"
-                  : "text-indigo-600"
+                  ? ' text-indigo-800 font-bold'
+                  : 'text-indigo-600'
               }`}
             >
               {section.title}
