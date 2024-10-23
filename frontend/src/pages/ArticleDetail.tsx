@@ -173,7 +173,7 @@ const ArticleDetail: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="hidden lg:block lg:mt-8">
             <InThisArticle sections={sectionsList} />
           </div>
         </div>
