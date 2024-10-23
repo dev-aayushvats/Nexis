@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import HeadingCard from '../components/HeadingCard'; // Adjust the import path as needed
 import InThisArticle from '../components/InThisArticle';
+import RelatedArticlesCard from '../components/RelatedArticlesCard';
 
 const ArticleDetail: React.FC = () => {
   const { id } = useParams(); // Id from article endpoint to be used to fetch article from backend
@@ -19,7 +20,7 @@ const ArticleDetail: React.FC = () => {
           {/* Heading Card */}
           <HeadingCard
             imageUrl="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg"
-            topic="Philosophy"
+            topic="Engineering"
             title="Learn how to relax in the age of stress and anxiety"
             publishedDate="13 Oct"
             readTime={12}
@@ -103,6 +104,8 @@ const ArticleDetail: React.FC = () => {
               balanced and fulfilling life. So take a deep breath, let go of
               your worries, and enjoy the journey to relaxation.
             </p>
+
+            <div className="border-b border-black mt-4"></div>
           </div>
         </div>
 
@@ -178,6 +181,17 @@ const ArticleDetail: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Here comes the related articles section */}
+      <section className="mb-8">
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          Related Articles
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <RelatedArticlesCard />
+          <RelatedArticlesCard />
+          <RelatedArticlesCard />
+        </div>
+      </section>
     </div>
   );
 };
