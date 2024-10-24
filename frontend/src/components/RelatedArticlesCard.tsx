@@ -26,7 +26,7 @@ const RelatedArticlesCard: React.FC<IRelatedArticlesCard> = ({
         />
       </div>
       <div className="px-4 mt-4">
-        <TopicChips topic="Mathematics" backgroundColor={false} />
+        <TopicChips topic="Psychology" backgroundColor={false} />
       </div>
       <div className="px-4 mb-4">
         <h2 className="text-xl mt-2 font-semibold text-gray-800">

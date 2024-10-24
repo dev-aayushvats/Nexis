@@ -3,7 +3,7 @@ import { getTopicColors } from '../utils/chipsUtils';
 
 interface ITopicChips {
   topic: string;
-  backgroundColor: boolean;
+  backgroundColor?: boolean;
 }
 
 const TopicChips: React.FC<ITopicChips> = ({

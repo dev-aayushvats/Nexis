@@ -1,11 +1,11 @@
-import TopicChips from "./TopicChips";
+import TopicChips from './TopicChips';
 
 interface cardProps {
-  imageUrl: string,
-  topic: string,
-  title: string,
-  publishedDate: string,
-  readTime: number
+  imageUrl: string;
+  topic: string;
+  title: string;
+  publishedDate: string;
+  readTime: number;
 }
 
 const ContentCard = (props: cardProps) => {
