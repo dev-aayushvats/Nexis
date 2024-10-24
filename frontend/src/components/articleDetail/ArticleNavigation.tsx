@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-interface InThisArticleProps {
+interface ArticleNavigationProps {
   sections: { id: string; title: string }[]; // Array of sections
 }
 
-const InThisArticle: React.FC<InThisArticleProps> = ({ sections }) => {
+const ArticleNavigation: React.FC<ArticleNavigationProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   const handleScroll = () => {
@@ -69,4 +69,4 @@ const InThisArticle: React.FC<InThisArticleProps> = ({ sections }) => {
   );
 };
 
-export default InThisArticle;
+export default ArticleNavigation;

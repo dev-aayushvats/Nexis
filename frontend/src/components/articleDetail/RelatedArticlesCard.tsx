@@ -1,5 +1,5 @@
 import React from 'react';
-import TopicChips from './TopicChips';
+import TopicChips from '../TopicChips';
 
 interface IRelatedArticlesCard {
   topic: string;

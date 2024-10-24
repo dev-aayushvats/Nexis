@@ -1,12 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import HeadingCard from '../components/HeadingCard'; // Adjust the import path as needed
-import InThisArticle from '../components/InThisArticle';
-import RelatedArticlesCard from '../components/RelatedArticlesCard';
+import HeadingCard from '../components/articleDetail/HeadingCard';
+import RelatedArticlesCard from '../components/articleDetail/RelatedArticlesCard';
 import ShareArticle from '../components/articleDetail/ShareArticle';
+import ArticleNavigation from '../components/articleDetail/ArticleNavigation';
 
 const ArticleDetail: React.FC = () => {
-  const { id } = useParams(); // Id from article endpoint to be used to fetch article from backend
+  const {
+    /* id */
+  } = useParams(); // Id from article endpoint to be used to fetch article from backend
 
   const sectionsList = [
     { id: 'introduction', title: 'Introduction' },
@@ -114,7 +116,7 @@ const ArticleDetail: React.FC = () => {
         <div className="col-span-12 lg:col-span-4 sticky top-4 h-screen">
           <ShareArticle />
           <div className="hidden lg:block lg:mt-8">
-            <InThisArticle sections={sectionsList} />
+            <ArticleNavigation sections={sectionsList} />
           </div>
         </div>
       </div>
