@@ -102,7 +102,7 @@ const HeroCarousel: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent" />
               {/* Title, Published Date, and Read Time */}
               <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center text-white m-2">
-                <h2 className="text-3xl font-semibold">{item.title}</h2>
+                <h2 className="text-3xl mb-1 font-semibold">{item.title}</h2>
                 <p className="text-sm">
                   {item.publishedDate} &bull; {item.readTime}
                 </p>
