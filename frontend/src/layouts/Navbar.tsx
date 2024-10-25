@@ -8,7 +8,7 @@ function Navbar() {
           <Link to="/">
             <a
               href="#"
-              className="text-3xl font-cinzel font-bold text-indigo-600"
+              className="text-3xl font-space_grotesk font-bold text-indigo-600"
             >
               Nexis
             </a>
