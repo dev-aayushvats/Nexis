@@ -1,26 +1,34 @@
+import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
     <nav className="bg-white border-b-2 shadow-sm">
       <div className="container mx-auto px-48">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#"
-            className="text-3xl font-cinzel font-bold text-indigo-600"
-          >
-            Nexis
-          </a>
+          <Link to="/">
+            <a
+              href="#"
+              className="text-3xl font-cinzel font-bold text-indigo-600"
+            >
+              Nexis
+            </a>
+          </Link>
           <div className="hidden md:block ml-10">
             <div className="flex items-center">
               <div className="space-x-4">
-                <a href="#" className="text-gray-600 hover:text-indigo-600">
-                  Home
-                </a>
+                <Link to="/">
+                  <a href="#" className="text-gray-600 hover:text-indigo-600">
+                    Home
+                  </a>
+                </Link>
                 <a href="#" className="text-gray-600 hover:text-indigo-600">
                   About
                 </a>
-                <a href="#" className="text-gray-600 hover:text-indigo-600">
-                  Topics
-                </a>
+                <Link to="/topics">
+                  <a href="#" className="text-gray-600 hover:text-indigo-600">
+                    Topics
+                  </a>
+                </Link>
                 <a href="#" className="text-gray-600 hover:text-indigo-600">
                   Favorites
                 </a>

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import ContentCard from '../components/ContentCard';
+import ContentCard from '../components/topicsPage/ArticleCard';
 
 function HomePage() {
   return (
