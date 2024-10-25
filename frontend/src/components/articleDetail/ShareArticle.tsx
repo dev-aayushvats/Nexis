@@ -1,6 +1,6 @@
 const ShareArticle = () => {
   return (
-    <div className="bg-indigo-600 shadow-lg rounded-lg p-4">
+    <div className="bg-primary-400 shadow-lg rounded-xl p-4">
       <h2 className="text-lg text-white font-bold mb-4">Share this article</h2>
       <div className="flex space-x-4">
         {/* Social Share Links */}

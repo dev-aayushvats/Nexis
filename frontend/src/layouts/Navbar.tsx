@@ -8,7 +8,7 @@ function Navbar() {
           <Link to="/">
             <a
               href="#"
-              className="text-3xl font-space_grotesk font-bold text-indigo-600"
+              className="text-3xl font-space_grotesk font-bold text-primary-400"
             >
               Nexis
             </a>
@@ -17,26 +17,40 @@ function Navbar() {
             <div className="flex items-center">
               <div className="space-x-4">
                 <Link to="/">
-                  <a href="#" className="text-gray-600 hover:text-indigo-600">
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-primary-600 transition-colors"
+                  >
                     Home
                   </a>
                 </Link>
-                <a href="#" className="text-gray-600 hover:text-indigo-600">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-primary-600 transition-colors"
+                >
                   About
                 </a>
                 <Link to="/topics">
-                  <a href="#" className="text-gray-600 hover:text-indigo-600">
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-primary-600 transition-colors"
+                  >
                     Topics
                   </a>
                 </Link>
-                <a href="#" className="text-gray-600 hover:text-indigo-600">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-primary-600 transition-colors"
+                >
                   Favorites
                 </a>
               </div>
               <div className="ml-12 space-x-6">
-                <button className="text-indigo-700 font-semibold">Login</button>
-                <button className="h-10 rounded-xl bg-indigo-100 hover:bg-indigo-500 px-6">
-                  <div className="text-indigo-700 font-semibold text-sm">
+                <button className="text-primary-600 font-semibold">
+                  Login
+                </button>
+                <button className="h-10 rounded-xl bg-primary-400 hover:text-white px-6 transition-colors">
+                  <div className="text-white font-semibold text-sm">
                     Getting Started
                   </div>
                 </button>

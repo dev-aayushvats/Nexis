@@ -49,15 +49,17 @@ const ArticleNavigation: React.FC<ArticleNavigationProps> = ({ sections }) => {
           <li key={section.id} className="flex items-center">
             <span
               className={`w-2 h-8 rounded-md mr-2 ${
-                activeSection === section.id ? 'bg-indigo-600' : 'bg-indigo-100'
+                activeSection === section.id
+                  ? 'bg-primary-400'
+                  : 'bg-primary-100'
               }`}
             ></span>
             <button
               onClick={() => scrollToSection(section.id)} // Scroll to section on click
               className={`block w-full text-left p-2 rounded ${
                 activeSection === section.id
-                  ? ' text-indigo-800 font-bold'
-                  : 'text-indigo-600'
+                  ? ' text-primary-400 font-bold'
+                  : 'text-primary-400'
               }`}
             >
               {section.title}
