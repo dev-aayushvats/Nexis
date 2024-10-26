@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ArticleCard from '../components/topicsPage/ArticleCard';
 import { getTopicColors } from '../utils/chipsUtils';
+import { Link } from 'react-router-dom';
 
 type Topic = {
   name: string;
@@ -128,13 +129,15 @@ const TopicsPage: React.FC = () => {
             </h2>
             <div className="flex flex-col space-y-2">
               {filteredArticles.map((article) => (
-                <ArticleCard
-                  imageUrl={article.imageUrl}
-                  topic={article.topic}
-                  title={article.title}
-                  publishedDate={article.publishedDate}
-                  readTime={article.readTime}
-                />
+                <Link to="/article/12">
+                  <ArticleCard
+                    imageUrl={article.imageUrl}
+                    topic={article.topic}
+                    title={article.title}
+                    publishedDate={article.publishedDate}
+                    readTime={article.readTime}
+                  />
+                </Link>
               ))}
             </div>
             {filteredArticles.length === 0 && (
