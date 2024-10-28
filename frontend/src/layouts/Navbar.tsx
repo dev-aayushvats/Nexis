@@ -29,7 +29,7 @@ function Navbar() {
     console.log(user);
   }
   return (
-    <nav className="bg-white border-b-2 shadow-sm">
+    <nav className="bg-neutral-200 shadow-sm">
       <div className="container mx-auto px-48">
         <div className="flex items-center justify-between h-16">
           <Link to="/">
@@ -46,28 +46,28 @@ function Navbar() {
                 <Link to="/">
                   <a
                     href="#"
-                    className="text-gray-600 hover:text-primary-600 transition-colors"
+                    className="text-neutral-400 hover:text-primary-600 transition-colors"
                   >
                     Home
                   </a>
                 </Link>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-primary-600 transition-colors"
+                  className="text-neutral-400 hover:text-primary-600 transition-colors"
                 >
                   About
                 </a>
                 <Link to="/topics">
                   <a
                     href="#"
-                    className="text-gray-600 hover:text-primary-600 transition-colors"
+                    className="text-neutral-400 hover:text-primary-600 transition-colors"
                   >
                     Topics
                   </a>
                 </Link>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-primary-600 transition-colors"
+                  className="text-neutral-400 hover:text-primary-600 transition-colors"
                 >
                   Favorites
                 </a>
