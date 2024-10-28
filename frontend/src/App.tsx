@@ -3,13 +3,18 @@ import { Routes, Route } from 'react-router-dom';
 import ArticleDetail from './pages/ArticleDetail';
 import HomePage from './pages/HomePage';
 import TopicsPage from './pages/TopicsPage';
+import { DotLoader } from 'react-spinners';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
   const { isLoading } = useAuth0();
 
   if (isLoading) {
-    return <div>Loading...</div>; // Or a proper loading component
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <DotLoader color="#6B4DE6" /> // TODO: make these colors into const
+      </div>
+    );
   }
 
   return (

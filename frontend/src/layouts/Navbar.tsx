@@ -5,22 +5,9 @@ import LogoutButton from '../components/loginComponents/LogoutButton';
 import { useState, useRef, useEffect } from 'react';
 
 function Navbar() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Add loading state handling
-  if (isLoading) {
-    return (
-      <nav className="bg-neutral-200 shadow-sm">
-        <div className="container mx-auto px-48">
-          <div className="flex items-center justify-between h-16">
-            {/* You can show a loading spinner or skeleton here */}
-          </div>
-        </div>
-      </nav>
-    );
-  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
