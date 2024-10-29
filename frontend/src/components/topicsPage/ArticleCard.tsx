@@ -20,7 +20,7 @@ const ArticleCard = (props: cardProps) => {
       {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div> */}
 
       {/* Content */}
-      <div className="flex flex-col p-4 z-10">
+      <div className="flex flex-col p-4">
         {/* Tag */}
         <div className="mb-2">
           <TopicChips topic={props.topic} />

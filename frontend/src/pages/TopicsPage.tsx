@@ -104,7 +104,7 @@ const TopicsPage: React.FC = () => {
                     onClick={() => setSelectedTopic(topic.name)}
                     className={`w-full text-left px-4 py-2 rounded-md transition-colors ${
                       selectedTopic === topic.name
-                        ? `${getTopicColors(topic.name)?.bg} ${getTopicColors(topic.name)?.primary}`
+                        ? `bg-primary-200 text-primary-500`
                         : `hover:bg-gray-200`
                     }`}
                   >
@@ -123,7 +123,7 @@ const TopicsPage: React.FC = () => {
 
         {/* Right Content - Articles Grid */}
         <div className="col-span-12 md:col-span-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-neutral-200 rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-6">
               Articles in {selectedTopic}
             </h2>
