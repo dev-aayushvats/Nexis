@@ -46,28 +46,28 @@ function Navbar() {
                 <Link to="/">
                   <a
                     href="#"
-                    className="text-neutral-400 hover:text-primary-600 transition-colors"
+                    className="text-neutral-500 hover:text-primary-600 transition-colors"
                   >
                     Home
                   </a>
                 </Link>
                 <a
                   href="#"
-                  className="text-neutral-400 hover:text-primary-600 transition-colors"
+                  className="text-neutral-500 hover:text-primary-600 transition-colors"
                 >
                   About
                 </a>
                 <Link to="/topics">
                   <a
                     href="#"
-                    className="text-neutral-400 hover:text-primary-600 transition-colors"
+                    className="text-neutral-500 hover:text-primary-600 transition-colors"
                   >
                     Topics
                   </a>
                 </Link>
                 <a
                   href="#"
-                  className="text-neutral-400 hover:text-primary-600 transition-colors"
+                  className="text-neutral-500 hover:text-primary-600 transition-colors"
                 >
                   Favorites
                 </a>

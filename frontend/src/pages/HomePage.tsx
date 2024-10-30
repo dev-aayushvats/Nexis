@@ -1,6 +1,7 @@
 import HeroCarousel from '../components/homePage/HeroCarousel';
 import TopicsTabLayout from '../layouts/homePage/TopicsTabLayout';
 import PopularArticlesCard from '../components/homePage/PopularArticlesCard';
+import Footer from '../layouts/Footer';
 
 function HomePage() {
   return (
@@ -8,7 +9,7 @@ function HomePage() {
       <div className="px-48">
         <HeroCarousel />
       </div>
-      <div className="container mx-auto px-48 mt-8">
+      <div className="container mx-auto px-48 mt-8 mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left section - Topics and Articles (spans 2 columns) */}
           <div className="lg:col-span-2">
@@ -21,6 +22,7 @@ function HomePage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

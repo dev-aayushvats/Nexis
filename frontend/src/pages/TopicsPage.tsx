@@ -30,7 +30,7 @@ const TopicsPage: React.FC = () => {
   );
 
   return (
-    <div className="container px-48 mt-8">
+    <div className="container min-h-screen px-48 mt-8">
       <h1 className="text-3xl font-bold mb-8">Topics</h1>
 
       <div className="grid grid-cols-12 gap-8">
@@ -65,7 +65,7 @@ const TopicsPage: React.FC = () => {
 
         {/* Right Content - Articles Grid */}
         <div className="col-span-12 md:col-span-8">
-          <div className="bg-neutral-200 rounded-lg p-6">
+          <div className="bg-neutral-50 rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-6">
               Articles in {selectedTopic}
             </h2>
