@@ -29,7 +29,7 @@ function Navbar() {
     console.log(user);
   }
   return (
-    <nav className="bg-neutral-200 shadow-sm">
+    <nav className="bg-neutral-100 shadow-sm">
       <div className="container mx-auto px-48">
         <div className="flex items-center justify-between h-16">
           <Link to="/">
