@@ -37,7 +37,7 @@ function Navbar() {
               href="#"
               className="text-3xl font-space_grotesk font-bold text-primary-400"
             >
-              Nexis
+              NEXIS
             </a>
           </Link>
           <div className="hidden md:block ml-10">
