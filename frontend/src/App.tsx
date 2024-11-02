@@ -13,7 +13,7 @@ function App() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <DotLoader color="#6B4DE6" /> // TODO: make these colors into const
+        <DotLoader color="#6B4DE6" /> {/* TODO: make these colors into const*/}
       </div>
     );
   }
