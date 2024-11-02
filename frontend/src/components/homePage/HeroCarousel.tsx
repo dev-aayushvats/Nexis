@@ -29,7 +29,7 @@ const HeroCarousel: React.FC = () => {
     <div className="container">
       <div id="carousel" className="relative w-full">
         {/* Carousel wrapper */}
-        <div className="relative h-56 overflow-hidden rounded-b-xl md:h-[50vh]">
+        <div className="relative mt-4 h-56 overflow-hidden rounded-xl md:h-[50vh]">
           {carouselItems.map((item, index) => (
             <div
               key={item.id}

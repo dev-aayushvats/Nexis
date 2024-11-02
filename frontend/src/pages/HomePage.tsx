@@ -13,6 +13,9 @@ function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left section - Topics and Articles (spans 2 columns) */}
           <div className="lg:col-span-2">
+            <div className="text-2xl font-bold text-neutral-600 pb-4">
+              Popular Topics
+            </div>
             <TopicsTabLayout /> {/* You'll need to create this component */}
           </div>
 
@@ -22,7 +25,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

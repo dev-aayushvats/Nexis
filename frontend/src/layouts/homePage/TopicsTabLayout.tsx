@@ -24,6 +24,12 @@ function TopicsTabLayout() {
     // Add more categories...
   });
 
+  const [selectedTopic, setSelectedTopic] = useState('Science');
+
+  const handleTopicClick = (topicName: string) => {
+    setSelectedTopic(() => topicName);
+  };
+
   return (
     <div className="w-full">
       <div role="tablist" className="tabs tabs-lifted">
@@ -31,9 +37,10 @@ function TopicsTabLayout() {
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab text-primary-400 font-semibold text-lg"
+          className={`tab ${selectedTopic === 'Science' ? 'text-primary-400 text-lg font-semibold' : ' transition-transform'}`}
           aria-label="Science"
           defaultChecked
+          onClick={() => handleTopicClick('Science')}
         />
         <div
           role="tabpanel"
@@ -50,8 +57,9 @@ function TopicsTabLayout() {
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab"
+          className={`tab ${selectedTopic === 'Technology' ? 'text-primary-400 text-lg font-semibold' : ' transition-transform'}`}
           aria-label="Technology"
+          onClick={() => handleTopicClick('Technology')}
         />
         <div
           role="tabpanel"
@@ -64,8 +72,9 @@ function TopicsTabLayout() {
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab"
+          className={`tab ${selectedTopic === 'Philosophy' ? 'text-primary-400 text-lg font-semibold' : ' transition-transform'}`}
           aria-label="Philosophy"
+          onClick={() => handleTopicClick('Philosophy')}
         />
         <div
           role="tabpanel"
