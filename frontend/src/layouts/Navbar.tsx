@@ -3,6 +3,7 @@ import LoginButton from '../components/loginComponents/LoginButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import LogoutButton from '../components/loginComponents/LogoutButton';
 import { useState, useRef, useEffect } from 'react';
+import { CircleUserRound } from 'lucide-react';
 
 function Navbar() {
   const { user, isAuthenticated } = useAuth0();
@@ -75,16 +76,34 @@ function Navbar() {
               <div className="ml-12 space-x-6">
                 {isAuthenticated ? (
                   <div className="relative" ref={dropdownRef}>
-                    <img
-                      src={user?.picture}
-                      alt="Profile"
-                      className="w-10 h-10 rounded-full cursor-pointer"
-                      title={user?.name || 'User profile'}
-                      onClick={() => setShowDropdown(!showDropdown)}
-                      loading="eager"
-                      decoding="async"
-                      crossOrigin="anonymous"
-                    />
+                    {user?.picture ? (
+                      <div>
+                        <img
+                          src={user?.picture}
+                          alt="Profile"
+                          className="w-10 h-10 rounded-full cursor-pointer"
+                          title={user?.name || 'User profile'}
+                          onClick={() => setShowDropdown(!showDropdown)}
+                          loading="eager"
+                          decoding="async"
+                          crossOrigin="anonymous"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const sibling = e.currentTarget.nextElementSibling;
+                            if (sibling) sibling.style.display = 'block';
+                          }}
+                        />
+                        <CircleUserRound
+                          className="w-10 h-10 cursor-pointer text-neutral-500 hidden"
+                          onClick={() => setShowDropdown(!showDropdown)}
+                        />
+                      </div>
+                    ) : (
+                      <CircleUserRound
+                        className="w-10 h-10 cursor-pointer text-neutral-500"
+                        onClick={() => setShowDropdown(!showDropdown)}
+                      />
+                    )}
                     {showDropdown && (
                       <div className="absolute right-0 mt-3 w-64 bg-neutral-50 rounded-b-lg shadow-xl py-2 z-20">
                         <div className="px-4 py-2 border-b border-gray-200">
@@ -100,14 +119,14 @@ function Navbar() {
                     )}
                   </div>
                 ) : (
-                  <>
+                  <div className="flex items-center space-x-6">
                     <LoginButton />
                     <button className="h-10 rounded-xl bg-primary-400 hover:text-white px-6 transition-colors">
                       <div className="text-white font-semibold text-sm">
                         Getting Started
                       </div>
                     </button>
-                  </>
+                  </div>
                 )}
               </div>
             </div>
