@@ -1,7 +1,6 @@
 import HeroCarousel from '../components/homePage/HeroCarousel';
 import TopicsTabLayout from '../layouts/homePage/TopicsTabLayout';
 import PopularArticlesCard from '../components/homePage/PopularArticlesCard';
-import Footer from '../layouts/Footer';
 
 function HomePage() {
   return (

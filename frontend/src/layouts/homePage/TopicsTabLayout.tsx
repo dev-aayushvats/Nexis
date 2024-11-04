@@ -1,29 +1,8 @@
 import { useState } from 'react';
-import { Tab } from '@headlessui/react';
-import { Link } from 'react-router-dom';
 import { mockArticles } from '../../mocks/articleData';
-import { Article } from '../../mocks/articleData';
 import ArticleCard from '../../components/topicsPage/ArticleCard';
 
 function TopicsTabLayout() {
-  const [categories] = useState({
-    Technology: [
-      /* Mock data - replace with your actual data */
-      {
-        id: 1,
-        title: 'The Future of AI Development',
-        topic: 'Technology',
-        publishedDate: '15 Mar',
-        readTime: 8,
-        imageUrl: '/path-to-image.jpg',
-      },
-      // Add more articles...
-    ],
-    Philosophy: [],
-    Science: [],
-    // Add more categories...
-  });
-
   const [selectedTopic, setSelectedTopic] = useState('Science');
 
   const handleTopicClick = (topicName: string) => {

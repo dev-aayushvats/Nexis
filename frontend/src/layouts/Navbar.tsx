@@ -84,7 +84,8 @@ function Navbar() {
                           onError={(e) => {
                             e.currentTarget.style.display = 'none';
                             const sibling = e.currentTarget.nextElementSibling;
-                            if (sibling) sibling.style.display = 'block';
+                            if (sibling)
+                              (sibling as HTMLElement).style.display = 'block';
                           }}
                         />
                         <CircleUserRound
