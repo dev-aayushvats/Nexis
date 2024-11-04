@@ -18,7 +18,7 @@ const TopicChips: React.FC<ITopicChips> = ({
       <span
         className={`w-3 h-3 rounded-full ${topicColors?.indicatorColor}`}
       ></span>
-      <span className={`${topicColors?.primary}`}>{topic}</span>
+      <span className={`${topicColors?.primary} pr-2`}>{topic}</span>
     </div>
   );
 };

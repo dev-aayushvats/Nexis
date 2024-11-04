@@ -1,4 +1,5 @@
 import React from 'react';
+import TopicChips from '../TopicChips';
 
 interface IRelatedArticlesCard {
   topic: string;
@@ -16,9 +17,9 @@ const RelatedArticlesCard: React.FC<IRelatedArticlesCard> = (props) => {
       <figure>
         <img src={imageUrl} alt={title} />
       </figure>
-      <div className="card-body">
-        <span className="badge badge-primary">{topic}</span>
-        <h2 className="card-title">{title}</h2>
+      <div className="p-4">
+        <TopicChips topic={topic} />
+        <h2 className="card-title mt-2">{title}</h2>
         <div className="flex justify-between text-sm text-gray-500">
           <span>{publishedDate}</span>
           <span>{readingTime} read</span>

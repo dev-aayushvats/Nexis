@@ -131,24 +131,24 @@ const ArticleDetail: React.FC = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <RelatedArticlesCard
-            topic="Sample Topic"
+            topic="Philosophy"
             title="Sample Title"
             publishedDate="2024-03-21"
-            imageUrl="/sample-image.jpg"
+            imageUrl="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg"
             readingTime={5}
           />
           <RelatedArticlesCard
-            topic="Sample Topic"
+            topic="Philosophy"
             title="Sample Title"
             publishedDate="2024-03-21"
-            imageUrl="/sample-image.jpg"
+            imageUrl="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg"
             readingTime={5}
           />
           <RelatedArticlesCard
-            topic="Sample Topic"
+            topic="Philosophy"
             title="Sample Title"
             publishedDate="2024-03-21"
-            imageUrl="/sample-image.jpg"
+            imageUrl="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg"
             readingTime={5}
           />
         </div>
