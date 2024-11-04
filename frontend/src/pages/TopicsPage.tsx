@@ -25,9 +25,29 @@ const TopicsPage: React.FC = () => {
   ];
 
   const [selectedTopic, setSelectedTopic] = useState<string>(topics[0].name);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 5;
+
   const filteredArticles = mockArticles.filter(
     (article) => article.topic === selectedTopic,
   );
+
+  // Calculate pagination values
+  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const paginatedArticles = filteredArticles.slice(
+    startIndex,
+    startIndex + articlesPerPage,
+  );
+
+  // Handle page changes
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
 
   return (
     <div className="container min-h-screen px-48 mt-8">
@@ -64,14 +84,14 @@ const TopicsPage: React.FC = () => {
         </div>
 
         {/* Right Content - Articles Grid */}
-        <div className="col-span-12 md:col-span-8">
+        <div className="col-span-12 md:col-span-8 mb-8">
           <div className="bg-neutral-50 rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-6">
               Articles in {selectedTopic}
             </h2>
             <div className="flex flex-col space-y-2">
-              {filteredArticles.map((article) => (
-                <Link to="/article/12">
+              {paginatedArticles.map((article) => (
+                <Link key={article.id} to={`/article/${article.id}`}>
                   <ArticleCard
                     imageUrl={article.imageUrl}
                     topic={article.topic}
@@ -87,6 +107,27 @@ const TopicsPage: React.FC = () => {
                 No articles found for this topic.
               </p>
             )}
+            <div className="paginationComponent flex justify-end mt-4">
+              <div className="join">
+                <button
+                  className="join-item btn"
+                  onClick={handlePrevPage}
+                  disabled={currentPage === 1}
+                >
+                  «
+                </button>
+                <button className="join-item btn">
+                  Page {currentPage} / {totalPages}
+                </button>
+                <button
+                  className="join-item btn"
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages}
+                >
+                  »
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import HeadingCard from '../components/articleDetail/HeadingCard';
 import RelatedArticlesCard from '../components/articleDetail/RelatedArticlesCard';
@@ -6,6 +6,10 @@ import ShareArticle from '../components/articleDetail/ShareArticle';
 import ArticleNavigation from '../components/articleDetail/ArticleNavigation';
 
 const ArticleDetail: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const {
     /* id */
   } = useParams(); // Id from article endpoint to be used to fetch article from backend
