@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div>
-      <footer className="footer footer-center bg-primary-400 text-primary-content p-10">
+      <footer className="footer footer-center bg-primary-400 text-primary-content p-8">
         <aside>
           <h1 className="text-4xl font-bold font-space_grotesk">NEXIS</h1>
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>

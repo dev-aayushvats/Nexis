@@ -12,6 +12,15 @@ const HeroCarousel: React.FC = () => {
     }
   };
 
+  const handlePrev = () => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentSlide(
+        (prev) => (prev - 1 + carouselItems.length) % carouselItems.length,
+      );
+    }
+  };
+
   useEffect(() => {
     const timeout = setTimeout(() => setIsAnimating(false), 700); // Duration matches CSS transition
     return () => clearTimeout(timeout);
@@ -74,7 +83,7 @@ const HeroCarousel: React.FC = () => {
         <button
           type="button"
           className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
-          onClick={handleNext} // You may want to implement the previous button functionality
+          onClick={handlePrev}
         >
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-white/40 group-hover:bg-white/50 dark:group-hover:bg-gray-100/70">
             <svg

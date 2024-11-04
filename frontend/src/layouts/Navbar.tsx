@@ -52,12 +52,6 @@ function Navbar() {
                     Home
                   </a>
                 </Link>
-                <a
-                  href="#"
-                  className="text-neutral-500 hover:text-primary-600 transition-colors"
-                >
-                  About
-                </a>
                 <Link to="/topics">
                   <a
                     href="#"
@@ -73,7 +67,7 @@ function Navbar() {
                   Favorites
                 </a>
               </div>
-              <div className="ml-12 space-x-6">
+              <div className="ml-8 space-x-6">
                 {isAuthenticated ? (
                   <div className="relative" ref={dropdownRef}>
                     {user?.picture ? (
