@@ -37,7 +37,7 @@ const TopicsPage: React.FC = () => {
         {/* Left Sidebar - Sticky Topics List */}
         <div className="col-span-12 md:col-span-4">
           <div className="sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto">
-            <div className="bg-gray-50 rounded-lg shadow-md p-6">
+            <div className="bg-gray-50 rounded-lg p-6">
               <h2 className="text-xl font-semibold mb-4">Browse Topics</h2>
               <div className="space-y-2">
                 {topics.map((topic) => (
