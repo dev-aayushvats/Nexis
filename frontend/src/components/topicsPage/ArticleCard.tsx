@@ -10,16 +10,13 @@ interface cardProps {
 
 const ArticleCard = (props: cardProps) => {
   return (
-    <div className="flex space-x-2 items-center w-full h-36 bg-white rounded-lg overflow-hidden border border-b-2">
+    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 items-start sm:items-center w-full h-auto sm:h-36 bg-white rounded-lg overflow-hidden border border-b-2">
       <img
         src={props.imageUrl}
         alt={props.title}
-        className="w-40 h-full object-cover"
+        className="w-full sm:w-40 h-48 sm:h-full object-cover"
       />
 
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div> */}
-
-      {/* Content */}
       <div className="flex flex-col p-4">
         {/* Tag */}
         <div className="mb-2">

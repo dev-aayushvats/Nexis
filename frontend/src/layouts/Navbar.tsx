@@ -31,17 +31,20 @@ function Navbar() {
   }
   return (
     <nav className="bg-neutral-100 shadow-sm">
-      <div className="container mx-auto px-48">
+      <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
         <div className="flex items-center justify-between h-16">
           <Link to="/">
             <a
               href="#"
-              className="text-3xl font-space_grotesk font-bold text-primary-400"
+              className="text-2xl sm:text-3xl font-space_grotesk font-bold text-primary-400"
             >
               NEXIS
             </a>
           </Link>
-          <div className="hidden md:block ml-10">
+          <div className="md:hidden">
+            {/* Add a hamburger menu button here */}
+          </div>
+          <div className="hidden md:block">
             <div className="flex items-center">
               <div className="space-x-4">
                 <Link to="/">
@@ -67,7 +70,7 @@ function Navbar() {
                   Favorites
                 </a>
               </div>
-              <div className="ml-8 space-x-6">
+              <div className="ml-4 lg:ml-8 space-x-3 lg:space-x-6">
                 {isAuthenticated ? (
                   <div className="relative" ref={dropdownRef}>
                     {user?.picture ? (

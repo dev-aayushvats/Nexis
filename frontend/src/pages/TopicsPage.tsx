@@ -50,29 +50,31 @@ const TopicsPage: React.FC = () => {
   };
 
   return (
-    <div className="container min-h-screen px-48 mt-8">
-      <h1 className="text-3xl font-bold mb-8">Topics</h1>
+    <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 mt-4 sm:mt-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8">Topics</h1>
 
-      <div className="grid grid-cols-12 gap-8">
-        {/* Left Sidebar - Sticky Topics List */}
-        <div className="col-span-12 md:col-span-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8">
+        {/* Left Sidebar - Topics List */}
+        <div className="col-span-1 lg:col-span-4">
           <div className="sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h2 className="text-xl font-semibold mb-4">Browse Topics</h2>
+            <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold mb-4">
+                Browse Topics
+              </h2>
               <div className="space-y-2">
                 {topics.map((topic) => (
                   <button
                     key={topic.name}
                     onClick={() => setSelectedTopic(topic.name)}
-                    className={`w-full text-left px-4 py-2 rounded-md transition-colors ${
+                    className={`w-full text-left px-3 sm:px-4 py-2 rounded-md transition-colors ${
                       selectedTopic === topic.name
                         ? `bg-primary-200 text-primary-500`
                         : `hover:bg-gray-200`
                     }`}
                   >
                     <div className="flex justify-between items-center">
-                      <span>{topic.name}</span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm sm:text-base">{topic.name}</span>
+                      <span className="text-xs sm:text-sm text-gray-500">
                         {topic.count}
                       </span>
                     </div>
@@ -84,14 +86,18 @@ const TopicsPage: React.FC = () => {
         </div>
 
         {/* Right Content - Articles Grid */}
-        <div className="col-span-12 md:col-span-8 mb-8">
-          <div className="bg-neutral-50 rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-6">
+        <div className="col-span-1 lg:col-span-8 mb-4 sm:mb-8">
+          <div className="bg-neutral-50 rounded-lg p-4 sm:p-6">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
               Articles in {selectedTopic}
             </h2>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-3 sm:space-y-4">
               {paginatedArticles.map((article) => (
-                <Link key={article.id} to={`/article/${article.id}`}>
+                <Link
+                  key={article.id}
+                  to={`/article/${article.id}`}
+                  className="block hover:shadow-md transition-shadow duration-200"
+                >
                   <ArticleCard
                     imageUrl={article.imageUrl}
                     topic={article.topic}
@@ -102,25 +108,28 @@ const TopicsPage: React.FC = () => {
                 </Link>
               ))}
             </div>
+
             {filteredArticles.length === 0 && (
-              <p className="text-gray-500 text-center py-8">
+              <p className="text-gray-500 text-center py-6 sm:py-8">
                 No articles found for this topic.
               </p>
             )}
-            <div className="paginationComponent flex justify-end mt-4">
+
+            {/* Pagination */}
+            <div className="paginationComponent flex justify-center sm:justify-end mt-4 sm:mt-6">
               <div className="join">
                 <button
-                  className="join-item btn"
+                  className="join-item btn btn-sm sm:btn-md"
                   onClick={handlePrevPage}
                   disabled={currentPage === 1}
                 >
                   «
                 </button>
-                <button className="join-item btn">
+                <button className="join-item btn btn-sm sm:btn-md">
                   Page {currentPage} / {totalPages}
                 </button>
                 <button
-                  className="join-item btn"
+                  className="join-item btn btn-sm sm:btn-md"
                   onClick={handleNextPage}
                   disabled={currentPage === totalPages}
                 >

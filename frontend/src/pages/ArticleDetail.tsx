@@ -20,10 +20,10 @@ const ArticleDetail: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-48 mt-4">
-      <div className="grid grid-cols-12 gap-4">
+    <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         {/* Left Side: Article Details */}
-        <div className="col-span-12 lg:col-span-8">
+        <div className="col-span-1 lg:col-span-8">
           {/* Heading Card */}
           <HeadingCard
             imageUrl="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg"
@@ -117,7 +117,7 @@ const ArticleDetail: React.FC = () => {
         </div>
 
         {/* Right Side: Sticky Social Links and Navigation */}
-        <div className="col-span-12 lg:col-span-4 sticky top-4 h-screen">
+        <div className="col-span-1 lg:col-span-4 lg:sticky lg:top-4 h-auto lg:h-screen">
           <ShareArticle />
           <div className="hidden lg:block lg:mt-8">
             <ArticleNavigation sections={sectionsList} />
@@ -129,7 +129,7 @@ const ArticleDetail: React.FC = () => {
         <h1 className="text-2xl font-bold text-gray-800 mb-4">
           Related Articles
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           <RelatedArticlesCard
             topic="Philosophy"
             title="Sample Title"
