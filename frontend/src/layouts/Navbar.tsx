@@ -55,7 +55,13 @@ function Navbar() {
           <div className={`hidden md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
             <div className="flex items-center">
               <div className="space-x-4">
-                <Link to="/">
+                <Link
+                  to="/"
+                  onClick={() => {
+                    setShowDropdown(false);
+                    setIsMenuOpen(false);
+                  }}
+                >
                   <a
                     href="#"
                     className="text-neutral-500 hover:text-primary-600 transition-colors"
@@ -63,7 +69,13 @@ function Navbar() {
                     Home
                   </a>
                 </Link>
-                <Link to="/topics">
+                <Link
+                  to="/topics"
+                  onClick={() => {
+                    setShowDropdown(false);
+                    setIsMenuOpen(false);
+                  }}
+                >
                   <a
                     href="#"
                     className="text-neutral-500 hover:text-primary-600 transition-colors"
@@ -72,7 +84,10 @@ function Navbar() {
                   </a>
                 </Link>
                 <a
-                  href="#"
+                  onClick={() => {
+                    setShowDropdown(false);
+                    setIsMenuOpen(false);
+                  }}
                   className="text-neutral-500 hover:text-primary-600 transition-colors"
                 >
                   Favorites
@@ -142,17 +157,35 @@ function Navbar() {
           className={`md:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-40' : 'max-h-0 overflow-hidden'}`}
         >
           <div className="flex flex-col space-y-2 p-4">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => {
+                setShowDropdown(false);
+                setIsMenuOpen(false);
+              }}
+            >
               <a className="text-neutral-500 hover:text-primary-600 transition-colors">
                 Home
               </a>
             </Link>
-            <Link to="/topics">
+            <Link
+              to="/topics"
+              onClick={() => {
+                setShowDropdown(false);
+                setIsMenuOpen(false);
+              }}
+            >
               <a className="text-neutral-500 hover:text-primary-600 transition-colors">
                 Topics
               </a>
             </Link>
-            <a className="text-neutral-500 hover:text-primary-600 transition-colors">
+            <a
+              onClick={() => {
+                setShowDropdown(false);
+                setIsMenuOpen(false);
+              }}
+              className="text-neutral-500 hover:text-primary-600 transition-colors"
+            >
               Favorites
             </a>
             {isAuthenticated && (
