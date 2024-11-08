@@ -9,6 +9,7 @@ function Navbar() {
   const { user, isAuthenticated } = useAuth0();
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -30,7 +31,7 @@ function Navbar() {
     console.log(user);
   }
   return (
-    <nav className="bg-neutral-100 shadow-sm">
+    <nav className="bg-neutral-100 shadow-sm z-50">
       <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
         <div className="flex items-center justify-between h-16">
           <Link to="/">
@@ -42,9 +43,16 @@ function Navbar() {
             </a>
           </Link>
           <div className="md:hidden">
-            {/* Add a hamburger menu button here */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-neutral-500"
+            >
+              <span className="block w-6 h-0.5 bg-neutral-500 mb-1"></span>
+              <span className="block w-6 h-0.5 bg-neutral-500 mb-1"></span>
+              <span className="block w-6 h-0.5 bg-neutral-500"></span>
+            </button>
           </div>
-          <div className="hidden md:block">
+          <div className={`hidden md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
             <div className="flex items-center">
               <div className="space-x-4">
                 <Link to="/">
@@ -128,6 +136,37 @@ function Navbar() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+        <div
+          className={`md:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-40' : 'max-h-0 overflow-hidden'}`}
+        >
+          <div className="flex flex-col space-y-2 p-4">
+            <Link to="/">
+              <a className="text-neutral-500 hover:text-primary-600 transition-colors">
+                Home
+              </a>
+            </Link>
+            <Link to="/topics">
+              <a className="text-neutral-500 hover:text-primary-600 transition-colors">
+                Topics
+              </a>
+            </Link>
+            <a className="text-neutral-500 hover:text-primary-600 transition-colors">
+              Favorites
+            </a>
+            {isAuthenticated && (
+              <div className="px-4 py-2 border-t border-gray-200">
+                <p className="text-sm text-gray-500">Signed in as</p>
+                <p className="font-semibold text-gray-700">{user?.name}</p>
+                <LogoutButton />
+              </div>
+            )}
+            {!isAuthenticated && (
+              <div className="flex items-center space-x-6">
+                <LoginButton />
+              </div>
+            )}
           </div>
         </div>
       </div>
