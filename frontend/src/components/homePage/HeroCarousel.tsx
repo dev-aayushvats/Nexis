@@ -49,7 +49,7 @@ const HeroCarousel: React.FC = () => {
               <img
                 src={item.imageSrc}
                 alt={item.altText}
-                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent" />
@@ -85,7 +85,7 @@ const HeroCarousel: React.FC = () => {
           className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
           onClick={handlePrev}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-white/40 group-hover:bg-white/50 dark:group-hover:bg-gray-100/70">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-white/40 group-hover:bg-white/50 dark:group-hover:bg-gray-100/70">
             <svg
               className="w-4 h-4 text-white dark:text-primary-600"
               xmlns="http://www.w3.org/2000/svg"
