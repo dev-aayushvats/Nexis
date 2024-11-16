@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { CarouselItem } from '../../interfaces/carouselItem';
 import { carouselItems as mockData } from '../../mocks/carouselData';
+import { formatDate } from '../../utils/dateUtils';
 
 const HeroCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,11 +80,7 @@ const HeroCarousel: React.FC = () => {
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center text-white m-2">
                   <h2 className="text-3xl mb-1 font-semibold">{item.title}</h2>
                   <p className="text-sm">
-                    {new Date(item.postDate).toLocaleString('default', {
-                      day: '2-digit',
-                      month: 'short',
-                    })}{' '}
-                    &bull; {item.readTime} min read
+                    {formatDate(item.postDate)} &bull; {item.readTime} min read
                   </p>
                 </div>
               </Link>
