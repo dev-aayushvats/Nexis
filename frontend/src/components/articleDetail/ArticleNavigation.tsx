@@ -8,8 +8,6 @@ interface ArticleNavigationProps {
 const ArticleNavigation: React.FC<ArticleNavigationProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  console.log(sections);
-
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 

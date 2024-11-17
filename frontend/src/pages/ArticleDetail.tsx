@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import HeadingCard from '../components/articleDetail/HeadingCard';
 import RelatedArticlesCard from '../components/articleDetail/RelatedArticlesCard';
 import ShareArticle from '../components/articleDetail/ShareArticle';
 import ArticleNavigation from '../components/articleDetail/ArticleNavigation';
 import axios from 'axios';
+import { axiosInstance } from '../config/axios';
 import { formatDate } from '../utils/dateUtils'; // Import the utility function
 import { getCapitalizedString } from '../utils/stringUtils';
+import { DotLoader } from 'react-spinners';
 
 // Define the body structure of the article
 interface IArticleBody {
@@ -51,6 +53,7 @@ const ArticleDetail: React.FC = () => {
   const [sectionsList, setSectionsList] = useState<ISection[]>([]);
   const [relatedArticles, setRelatedArticles] =
     useState<IRelatedArticles | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const setSectionsListFromArticleResponse = (data: IArticle) => {
     const bodyWithSections = data.body;
@@ -63,37 +66,42 @@ const ArticleDetail: React.FC = () => {
       };
       currSectionsList.push(currObj);
     }
-
-    console.log(currSectionsList);
-
     setSectionsList(currSectionsList);
-
-    console.log('***********************');
-    console.log(sectionsList);
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     const fetchArticle = async () => {
+      setIsLoading(true);
       try {
-        const articleResponse = await axios.get<IArticleResponse>(
-          `http://localhost:6969/api/articles/${id}`,
+        const articleResponse = await axiosInstance.get<IArticleResponse>(
+          `/api/articles/${id}`,
         );
-        const relatedArticlesResponse = await axios.get<IRelatedArticles>(
-          `http://localhost:6969/api/articles/related/${id}`,
-        );
+        const relatedArticlesResponse =
+          await axiosInstance.get<IRelatedArticles>(
+            `/api/articles/related/${id}`,
+          );
         const data = articleResponse.data.data;
         setArticle(articleResponse.data);
         setRelatedArticles(relatedArticlesResponse.data);
-        setSectionsListFromArticleResponse(data);
-        console.log(data); // Handle the fetched article data as needed
+        setSectionsListFromArticleResponse(data); // Handle the fetched article data as needed
       } catch (error) {
         console.error('Error fetching article:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchArticle();
   }, [id]);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <DotLoader color="#6B4DE6" /> {/* TODO: make these colors into const*/}
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 mt-4">
@@ -142,7 +150,7 @@ const ArticleDetail: React.FC = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {relatedArticles?.relatedArticles.map((item, index) => (
-            <div key={index}>
+            <Link to={`/article/${item._id}`} key={index}>
               <RelatedArticlesCard
                 topic={getCapitalizedString(item.topics[0])}
                 title={item.title}
@@ -150,7 +158,7 @@ const ArticleDetail: React.FC = () => {
                 imageUrl={item.imageUrl}
                 readingTime={item.readTime}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </section>

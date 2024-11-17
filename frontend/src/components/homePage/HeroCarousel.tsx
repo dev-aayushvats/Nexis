@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { axiosInstance } from '../../config/axios';
 import { CarouselItem } from '../../interfaces/carouselItem';
 import { carouselItems as mockData } from '../../mocks/carouselData';
 import { formatDate } from '../../utils/dateUtils';
@@ -42,7 +42,7 @@ const HeroCarousel: React.FC = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('http://localhost:6969/api/articles');
+        const response = await axiosInstance.get(`/api/articles`);
         setCarouselItems(response.data.data);
       } catch (error) {
         console.error('Failed to fetch articles:', error);
