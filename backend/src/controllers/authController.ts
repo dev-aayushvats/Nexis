@@ -5,8 +5,6 @@ import User from "../models/User";
 // Login User path : /api/auth
 export const authUser = async (req: Request, res: Response) => {
   const { name, email, picture, sub } = req.body;
-  console.log(req.body);
-  console.log(name, email, picture);
 
   try {
     const user = await User.findOne({ email });
