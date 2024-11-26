@@ -24,6 +24,7 @@ export const authUser = async (req: Request, res: Response) => {
 
       console.log(newUser);
     } else {
+      console.log("User found");
       (userId as any) = user._id;
     }
 
