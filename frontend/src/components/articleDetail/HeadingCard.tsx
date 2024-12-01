@@ -80,8 +80,9 @@ const HeadingCard: React.FC<IHeadingCard> = ({
     }
 
     try {
+      setLiked(!liked);
       const token = localStorage.getItem('jwtToken');
-      const response = await axiosInstance.post(
+      await axiosInstance.post(
         `/api/favorite`,
         { articleId: articleId },
         {
@@ -90,7 +91,6 @@ const HeadingCard: React.FC<IHeadingCard> = ({
           },
         },
       );
-      setLiked(response.data.isLiked);
     } catch (err: any) {
       // Check if error is due to unauthorized access (401)
       if (err.response?.status === 401) {
